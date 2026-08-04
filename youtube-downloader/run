@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Run from anywhere: ./youtube-downloader/run  or  bash youtube-downloader/run
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PY="${ROOT}/.venv/bin/python"
+if [[ ! -x "$PY" ]]; then
+  PY="$(command -v python3 || command -v python)"
+fi
+exec "$PY" "${ROOT}/youtube-downloader/download.py" "$@"

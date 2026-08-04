@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Process youtube-downloader/cola.txt sequentially.
+# Usage: ./youtube-downloader/run-cola
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec "$DIR/run" --cola "$@"
